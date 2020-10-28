@@ -1,6 +1,10 @@
 ---
 title: "second test"
 categories: blogg
+toc: true
 ---
 
-# test2
+# header1
+## header2
+
+# header3
