@@ -1,0 +1,67 @@
+{% assign sum = 0 %}
+{% for category in site.categories %}
+    {% assign sum = sum | plus: category[1].size %}
+{% endfor %}
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+	      전체 글 수 <u>{{sum}}</u> 개
+      </li>
+      <li>
+        <span class="nav__sub-title">Wiki</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "linux" %}
+                        <li><a href="/categories/linux" class="">linux ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        <span class="nav__sub-title">Book</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "effective_c++" %}
+                        <li><a href="/categories/effective_c++" class="">Effective C++ ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        <span class="nav__sub-title">Study</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "ffmpeg" %}
+                        <li><a href="/categories/ffmpeg" class="">ffmpeg ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "algorithm" %}
+                        <li><a href="/categories/algorithm" class="">알고리즘 구현 (with C++) ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+           </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "programmers" %}
+                        <li><a href="/categories/programmers" class="">programers ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        <span class="nav__sub-title">snippets</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "sp" %}
+                        <li><a href="/categories/sp" class="">sp ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+      </li>
+  </ul>
+</nav>
