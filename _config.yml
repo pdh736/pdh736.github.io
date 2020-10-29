@@ -11,16 +11,16 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme           : "mmistakes/minimal-mistakes"
+#remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Park's Storage"
+locale                   : "ko-KR"
+title                    : "Park's Archive"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Daehee.Park"
-description              : "An amazing website."
+description              : "Archive."
 url                      : "https://pdh736.github.io"
 baseurl                  : ""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -95,8 +95,8 @@ analytics:
 author:
   name             : "Daehee.Park"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "**H**ello"
-  location         : "Republic of Korea"
+  bio              : "기록 저장소"
+  #location         : "Republic of Korea"
   email            :
   links:
     - label: "Email"
