@@ -23,3 +23,8 @@ main:
 # 1. _includes/sidebar_tree 에서 코드를 추가한다.
 # (sidebar.html 에서 머릿말에 sidebar_main = true 를 해주면 sidebar_tree 을 불러오게끔 마지막 부분에 코딩이 되어있다.)
 # 2. pages/catecory 에 연결할 카테고리 페이지를 추가한다.
+# 3. 각 페이지 및 index에
+# author_profile: true
+# sidebar_main: true
+# 없으면 삽입
+
