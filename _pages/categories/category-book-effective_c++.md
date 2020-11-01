@@ -1,7 +1,7 @@
 ---
 title: "Effective C++"
 layout: archive
-permalink: categories/effective_c++
+permalink: categories/effective_cpp
 author_profile: true
 sidebar_main: true
 ---
@@ -10,5 +10,5 @@ sidebar_main: true
 
 ***
 
-{% assign posts = site.categories.effective_c++ %}
+{% assign posts = site.categories.effective_cpp %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

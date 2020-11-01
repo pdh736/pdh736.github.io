@@ -23,8 +23,8 @@
         <span class="nav__sub-title">Book</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "effective_c++" %}
-                        <li><a href="/categories/effective_c++" class="">Effective C++ ({{category[1].size}})</a></li>
+                    {% if category[0] == "effective_cpp" %}
+                        <li><a href="/categories/effective_cpp" class="">Effective C++ ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

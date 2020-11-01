@@ -3,10 +3,10 @@ title: "Chapter1"
 excerpt: "c++에 왔으면 c++의 법을 따르자"
 
 categories:
-  - effective_c++
+  - effective_cpp
 tags:
   - book
-  - effective_c++
+  - effective_cpp
 
 toc: true
 toc_sticky: true
