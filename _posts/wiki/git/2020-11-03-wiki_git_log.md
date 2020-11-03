@@ -30,16 +30,11 @@ git log --oneline
 git log --abbrev-commit --pretty=oneline
 
 
-
-
-
-
 ### 그래프로 보기
 
 git log --branches --decorate --graph --oneline
 
 git log --pretty=format:"%h %s" --graph
-
 
 
 ### 옵션
@@ -58,8 +53,6 @@ git log --pretty=format:"%h %s" --graph
 | `--graph`         | 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.    |
 | `--pretty`        | 지정한 형식으로 보여준다. 이 옵션에는 oneline, short, full, fuller, format이 있다. format은 원하는 형식으로 출력하고자 할 때 사용한다. |
 | `--oneline`       | `--pretty=oneline --abbrev-commit` 두 옵션을 함께 사용한 것과 같다. |
-
-
 
 
 ### pretty=format
@@ -88,21 +81,18 @@ ex) pretty=format:"%h %s"
 
 
 
-
-
 ## git 이력(HEAD 변경 이력)
 
 git reflog
 
-커밋 복구 하기
+### 커밋 되돌리기
 
 git reflog
 
 git reset --hard [커밋 해시]
 
 
-
-브랜치 복구하기
+### 브랜치 되돌리기
 
 git reflog or git reflog | grep 브랜치이름
 
