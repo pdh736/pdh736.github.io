@@ -1,5 +1,5 @@
 ---
-title: "log & relof"
+title: "log & relog"
 excerpt: "How to use log & reflog"
 
 categories:
