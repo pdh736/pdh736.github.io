@@ -1,0 +1,110 @@
+---
+title: "log & relof"
+excerpt: "How to use log & reflog"
+
+categories:
+  - git
+tags:
+  - wiki
+  - git
+
+toc: true
+toc_sticky: true
+
+date: 2020-11-03
+last_modified_at: 2020-11-03
+---
+
+##  log
+커밋 이력 조회
+```shell
+git log
+```
+
+주로 쓰는 옵션
+```shell
+git log --oneline
+```
+아래와 같은 결과 나옴
+
+git log --abbrev-commit --pretty=oneline
+
+
+
+
+
+
+### 그래프로 보기
+
+git log --branches --decorate --graph --oneline
+
+git log --pretty=format:"%h %s" --graph
+
+
+
+### 옵션
+
+ 여러 옵션 중 `-p`, `--patch` 는 굉장히 유용한 옵션이다. `-p` 는 각 커밋의 diff 결과를 보여준다. 다른 유용한 옵션으로 `-2`가 있는데 최근 두 개의 결과만 보여주는 옵션이다:
+
+| 옵션              | 설명                                                         |
+| :---------------- | :----------------------------------------------------------- |
+| `-p`              | 각 커밋에 적용된 패치를 보여준다.                            |
+| `--stat`          | 각 커밋에서 수정된 파일의 통계정보를 보여준다.               |
+| `--shortstat`     | `--stat` 명령의 결과 중에서 수정한 파일, 추가된 라인, 삭제된 라인만 보여준다. |
+| `--name-only`     | 커밋 정보중에서 수정된 파일의 목록만 보여준다.               |
+| `--name-status`   | 수정된 파일의 목록을 보여줄 뿐만 아니라 파일을 추가한 것인지, 수정한 것인지, 삭제한 것인지도 보여준다. |
+| `--abbrev-commit` | 40자 짜리 SHA-1 체크섬을 전부 보여주는 것이 아니라 처음 몇 자만 보여준다. |
+| `--relative-date` | 정확한 시간을 보여주는 것이 아니라 “2 weeks ago” 처럼 상대적인 형식으로 보여준다. |
+| `--graph`         | 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.    |
+| `--pretty`        | 지정한 형식으로 보여준다. 이 옵션에는 oneline, short, full, fuller, format이 있다. format은 원하는 형식으로 출력하고자 할 때 사용한다. |
+| `--oneline`       | `--pretty=oneline --abbrev-commit` 두 옵션을 함께 사용한 것과 같다. |
+
+
+
+
+### pretty=format
+
+ex) pretty=format:"%h %s"
+
+(많이 쓰임)
+
+| 옵션  | 설명                                |
+| :---- | :----------------------------------|
+| `%H`  | 커밋 해시                           |
+| `%h`  | 짧은 길이 커밋 해시                 |
+| `%T`  | 트리 해시                           |
+| `%t`  | 짧은 길이 트리 해시                 |
+| `%P`  | 부모 해시                           |
+| `%p`  | 짧은 길이 부모 해시                 |
+| `%an` | 저자 이름                           |
+| `%ae` | 저자 메일                           |
+| `%ad` | 저자 시각 (형식은 –-date=옵션 참고)   |
+| `%ar` | 저자 상대적 시각                    |
+| `%cn` | 커미터 이름                         |
+| `%ce` | 커미터 메일                         |
+| `%cd` | 커미터 시각                         |
+| `%cr` | 커미터 상대적 시각                  |
+| `%s`  | 요약                              |
+
+
+
+
+
+## git 이력(HEAD 변경 이력)
+
+git reflog
+
+커밋 복구 하기
+
+git reflog
+
+git reset --hard [커밋 해시]
+
+
+
+브랜치 복구하기
+
+git reflog or git reflog | grep 브랜치이름
+
+git checkout -b [브랜치 이름] [커밋 해시]
+
