@@ -105,3 +105,6 @@ C++규칙에 **어떤 객체든 객체의 데이터 멤버는 생성자의 본�
 비지역 **정적객체를 하나씩 맡는 함수를 만들고 그 객체를 함수 안에서 static으로 선언, 그 객체의 참조자 리턴**
 
 사용시 직접 호출 하지 말고 함수 호출(비지역의 지역과, singleton pattern의 구현양식)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTc4NDU5ODEwNl19
+-->
