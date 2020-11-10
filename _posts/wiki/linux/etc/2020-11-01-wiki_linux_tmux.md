@@ -170,3 +170,6 @@ unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t
 unbind Down
 bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNTI0NDA3NTUyXX0=
+-->
