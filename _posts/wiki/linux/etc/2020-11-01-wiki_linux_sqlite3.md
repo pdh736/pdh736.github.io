@@ -83,17 +83,18 @@ sqlite>
 .mode [mode?] [table?]
 ```
 
-.mode 인수  
+.mode 인수
+
 | 인수   | 설명                                             |
 | ------ | ------------------------------------------------|
-| csv    | 쉼표로 구분하여 출력                             |
-| column | 컴럼마다 왼쪽 정렬하여 출력                      |
-| html   | HTML의 TABLE 형식으로 출력                       |
+| csv    | 쉼표로 구분하여 출력                              |
+| column | 컴럼마다 왼쪽 정렬하여 출력                        |
+| html   | HTML의 TABLE 형식으로 출력                        |
 | insert | INSERT 문으로 출력                               |
-| line   | 각 컬럼마다 행을 나누어 출력                     |
-| list   | 구분 기호로 컴럼을 구분하여 행으로 출력(default) |
+| line   | 각 컬럼마다 행을 나누어 출력                       |
+| list   | 구분 기호로 컴럼을 구분하여 행으로 출력(default)    |
 | quote  | SQL 리터럴로 출력                                |
-| tabs   | 탭으로 구분하여 출력                             |
+| tabs   | 탭으로 구분하여 출력                              |
 | tcl    | TCL list형식으로 출력                            |
 
 #### list
