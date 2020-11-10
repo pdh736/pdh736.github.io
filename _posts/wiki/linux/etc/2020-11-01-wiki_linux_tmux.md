@@ -27,8 +27,10 @@ Terminal Muliiplexer
 -   pane(패널) : 하나의 window 내에서 화면 분할.
 -   status bar : 화면 아래 표시되는 상태 막대.
 
+
 ### 설치
 `yum install tmux`
+
 
 ### 명령어 정리
 tmux는 prefix 키인  `ctrl+b`를 누른 후 다음 명령 키를 눌러야 동작할 수 있다. 
@@ -169,6 +171,3 @@ unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t
 unbind Down
 bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQxMjU1NjQ5LDUyNDQwNzU1Ml19
--->
