@@ -22,25 +22,30 @@ last_modified_at: 2020-11-01
 sqlite3 [filename]
 ```
 
+
 ### 종료
 ```
 .quit
 ```
+
 
 ### 테이블 이름 보기
 ```
 .tables
 ```
 
+
 ### 스키마 보기
 #### 모든 테이블
 ```
 .schema
 ```
+
 #### 특정 테이블
 ```
 .schema [table?]
 ```
+
 
 ### 현재 설정 상태 확인
 ```
@@ -63,6 +68,7 @@ filename: mydb.sqlite3
 sqlite>
 ```
 
+
 ### .header  (select 시 컬럼 이름 같이 조회)
 ```
 .header on
@@ -70,18 +76,13 @@ sqlite>
 ```
 .show 로 확인 가능
 
-### .mode  (데이터 구분)
 
+### .mode  (데이터 구분)
 .mode 명령으로  select문의 실행 결과에 표시되는 데이터 구분을 어떻게 할지 설정할수 있다.
 ```
 .mode [mode?] [table?]
 ```
-
 .mode 인수 
-
-보통 로 사용
-
-
 | 인수   | 설명                                             |
 | ------ | ------------------------------------------------ |
 | csv    | 쉼표로 구분하여 출력                             |
@@ -95,11 +96,8 @@ sqlite>
 | tcl    | TCL list형식으로 출력                            |
 
 
-
 #### list
-
  list 모드는 조회한 데이터를 각 행마다 1행으로 출력한다. 하나의 행에 저장된 데이터는 컬럼마다 현재 설정되어 있는 구분 기호로 구분하여 출력
-
 ```
 sqlite> .mode list 
 sqlite> select * from user; 
@@ -109,15 +107,10 @@ sqlite> select * from user;
 4|happykuma|Seoul 
 5|mykuma|Daejeon
 ```
-
-여기서 구분자는 .setparator 명령으로 변경할 수 있다.
-
-
+여기서 구분자는 .setparator 명령으로 변경할 수 있음
 
 #### column
-
  column 모드는 조회한 데이터를 각 행마다 1행으로 출력한다. 하나의 행에 저당된 데이터는 컬럼마다 왼쪽 정렬하여 출력
-
 ``` 
 sqlite> .mode column 
 sqlite> select * from user; 
@@ -129,11 +122,8 @@ sqlite> select * from user;
 ```
 .width 명령어로 데이터 폭 설정 
 
-
 #### csv
-
  csv 모드는 조회한 데이터를 각 행마다 1행으로 출력한다. 하나의 행에 저장된 데이터는 컬럼마다 쉼표(,)로 구분하여 출력
-
 ```
 sqlite> .mode csv 
 sqlite> select * from user; 
@@ -144,14 +134,10 @@ sqlite> select * from user;
 5,mykuma,Daejeon 
 ```
 
-
-
 #### tabs
-
  tabs 모드는 조회한 데이터를 각 행마다 1행으로 출력한다. 하나의 행에 저장된 데이터는 컬럼마다 탭으로 구분하여 출력
-
+ 
 문자간격 8
-
 ```
 sqlite> .mode tabs 
 sqlite> select * from user; 
@@ -162,12 +148,8 @@ sqlite> select * from user;
 5 mykuma Daejeon
 ```
 
-
-
 #### line
-
  line 모드는 조회한 데이터를 한줄씩 처리하고, 컬럼마다 행(row)을 변경하여 표시
-
 ```
 sqlite> select * from user; 
 id = 1 
@@ -191,10 +173,7 @@ name = mykuma
 address = Daejeon
 ```
 
-
-
 #### html
-
  html 모드는 조회한 데이터를 HTML의 TABLE 형식으로 변환하여 표시
 
 ```
@@ -298,6 +277,6 @@ INSERT INTO "table" VALUES(5,'mykuma','Daejeon');
 .width -4 -8
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjc4NjMyMjcsMjA0NjU3NDEzLDE1Mz
-IyMjQzMzVdfQ==
+eyJoaXN0b3J5IjpbMTI3NTY0MTY4OSwyMDQ2NTc0MTMsMTUzMj
+IyNDMzNV19
 -->
