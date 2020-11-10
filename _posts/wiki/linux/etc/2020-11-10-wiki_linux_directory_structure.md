@@ -14,11 +14,6 @@ toc_sticky: true
 date: 2020-11-10
 last_modified_at: 2020-11-10
 ---
-
-[toc]
-
-
-
 ## 디렉토리 구조
 
 / : 최상위 디렉터리(root)
