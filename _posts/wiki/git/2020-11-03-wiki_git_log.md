@@ -98,3 +98,6 @@ git reflog or git reflog | grep 브랜치이름
 
 git checkout -b [브랜치 이름] [커밋 해시]
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMzUzMDQ0NDc1XX0=
+-->
