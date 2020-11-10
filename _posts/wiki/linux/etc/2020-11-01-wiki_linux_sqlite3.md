@@ -95,7 +95,6 @@ sqlite>
 | tabs   | 탭으로 구분하여 출력                             |
 | tcl    | TCL list형식으로 출력                            |
 
-
 #### list
  list 모드는 조회한 데이터를 각 행마다 1행으로 출력한다. 하나의 행에 저장된 데이터는 컬럼마다 현재 설정되어 있는 구분 기호로 구분하여 출력
 ```
@@ -201,12 +200,8 @@ sqlite> select * from user;
 </TR>
 ```
 
-
-
- #### tcl
-
+#### tcl
  tcl 모드는 조회한 데이터를 TCL 목록 형식으로 변환하여 표시
-
 ```
 sqlite> select * from user;
 "1" "devkuma" "Seoul"
@@ -216,12 +211,8 @@ sqlite> select * from user;
 "5" "mykuma" "Daejeon"
 ```
 
-
-
 #### insert
-
 insert 모드는 조회한 데이터를 각 행에 데이터를 추가할 때의 INSERT 문 형식으로 표시
-
 ```
 sqlite> select * from user; 
 INSERT INTO "table" VALUES(1,'devkuma','Seoul');
@@ -232,51 +223,32 @@ INSERT INTO "table" VALUES(5,'mykuma','Daejeon');
 ```
 
 
-
 ### .separator
-
 **mode 값이 list 일때** 구분 기호로 사용되는 문자를 변경할 수 있다.
-
 ```
 .separator [COL?] [ROW?]
 ```
-
 구분자 문자열로 사용가능
-
 ```
 .separator /-/
 ```
-
 구분자 문자열에 공백 포함되어 있을경우 쌍따옴표로 묶어서 작성
-
 ```
 .separator ", "
 ```
 
- 
 
 ### .width
-
 **mode 값이 column 일때** 컬럼마다 폭 설정
-
 ```
 .width NUM NUM ....
 ```
-
-인수는 컬럼마다 폭을 문자로 지정, 여러 컬럼의 너비를 설정하려공백을 두고 계속 작성
-
-
-
+인수는 컬럼마다 폭을 문자로 지정, 여러 컬럼의 너비를 설정하려공백을 두고 계속 작성  
 지정된 폭으로 데이터가 맞지 않는경우 폭 이상의 문자는 잘려서 표시된다.
 
 #### 데이터 오른쪽 정렬
 
 기본은 왼쪽정렬이지만 폭을 음수로 지정하면 오른쪽 정렬로 데이터를 표시 할 수 있다.
-
 ```
 .width -4 -8
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NTY0MTY4OSwyMDQ2NTc0MTMsMTUzMj
-IyNDMzNV19
--->
