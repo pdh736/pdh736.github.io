@@ -31,7 +31,7 @@ Terminal Muliiplexer
 `yum install tmux`
 
 ### 명령어 정리
-tmux는 prefix 키인  `ctrl+b`를 누른 후 다음 명령 키를 눌러야 동작할 수 있다. 다음 내용에서  `ctrl + b, 어쩌고`  내용이 있다면 tmux 내에서 쓸 수 있는 단축키다.
+tmux는 prefix 키인  `ctrl+b`를 누른 후 다음 명령 키를 눌러야 동작할 수 있다. 다음 내용에서  `ctrl + b, key`  내용이 있다면 tmux 내에서 쓸 수 있는 단축키다.
 
 ```text
 ctrl + b, <key>
@@ -171,5 +171,5 @@ unbind Down
 bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI0NDA3NTUyXX0=
+eyJoaXN0b3J5IjpbLTIwNDQ3NzE1MTEsNTI0NDA3NTUyXX0=
 -->
