@@ -22,18 +22,15 @@ last_modified_at: 2020-11-01
 sqlite3 [filename]
 ```
 
-
 ### 종료
 ```
 .quit
 ```
 
-
 ### 테이블 이름 보기
 ```
 .tables
 ```
-
 
 ### 스키마 보기
 #### 모든 테이블
@@ -44,7 +41,6 @@ sqlite3 [filename]
 ```
 .schema [table?]
 ```
-
 
 ### 현재 설정 상태 확인
 ```
@@ -67,20 +63,16 @@ filename: mydb.sqlite3
 sqlite>
 ```
 
-
 ### .header  (select 시 컬럼 이름 같이 조회)
 ```
 .header on
 .mode column
 ```
-
 .show 로 확인 가능
-
 
 ### .mode  (데이터 구분)
 
 .mode 명령으로  select문의 실행 결과에 표시되는 데이터 구분을 어떻게 할지 설정할수 있다.
-
 ```
 .mode [mode?] [table?]
 ```
@@ -306,5 +298,6 @@ INSERT INTO "table" VALUES(5,'mykuma','Daejeon');
 .width -4 -8
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0NjU3NDEzLDE1MzIyMjQzMzVdfQ==
+eyJoaXN0b3J5IjpbLTEyNjc4NjMyMjcsMjA0NjU3NDEzLDE1Mz
+IyMjQzMzVdfQ==
 -->
