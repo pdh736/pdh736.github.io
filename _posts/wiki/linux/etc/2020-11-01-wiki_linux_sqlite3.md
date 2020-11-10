@@ -305,9 +305,6 @@ INSERT INTO "table" VALUES(5,'mykuma','Daejeon');
 ```
 .width -4 -8
 ```
-
-
-출처: https://araikuma.tistory.com/731?category=874473 [프로그램 개발 지식 공유]
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMjIyNDMzNV19
+eyJoaXN0b3J5IjpbMjA0NjU3NDEzLDE1MzIyMjQzMzVdfQ==
 -->
