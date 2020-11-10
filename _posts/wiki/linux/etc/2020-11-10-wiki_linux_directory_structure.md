@@ -49,10 +49,8 @@ last_modified_at: 2020-11-10
 - block : 시스템에 있는 각 block device에 대한 정보
 - bus : 각 device에 어떤 device driver가 할당되어있는지의 정보
 - class : device를 역할에 따라 구분
-	예를들어 /sys/class/net에는 network interface들에 대한 정보가 있고
-	
+	예를들어 /sys/class/net에는 network interface들에 대한 정보가 있고  
 	/sys/class/input에는 키보드나 마우스와 같은 input 장치에 대한 정보가 있다
-	
      - devices  : 시스템의 장치에 대하여 어떻게 연결되어있는지에 대한 종합 hierarchy 정보
      - module   : 각 로드 되어있는 커널 모듈에 대한 정보를 모듈 파라메터 값 등의 디렉토리로 저장하고 있음
  
