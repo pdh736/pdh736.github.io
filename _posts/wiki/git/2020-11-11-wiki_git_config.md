@@ -1,5 +1,5 @@
 ---
-title: "git config"
+title: "config"
 excerpt: "How to set git config"
 
 categories:
