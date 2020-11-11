@@ -15,13 +15,13 @@ date: 2020-11-11
 last_modified_at: 2020-11-11
 ---
 
-## nbtstat (NetBIOS over Tcp/ip state)
+# nbtstat (NetBIOS over Tcp/ip state)
 TCP/IP의 NETBIOS가 사용하여 상대방의 mac, 사용자 이름등을 표시  
 주로 IP충돌이 났을 경우 상대방이 누군지 확인하는 명령어, 상대방 맥주소 확인할 때 사용
 ex) `netstat -antp | grep 149 | wc -l`
  
  
-### 옵션
+## 옵션
 |              |               |
 |-------------|-----------------|
 |-a 컴퓨터이름 	|원격 컴퓨터의 NetBIOS이름 테이블을 표시			|
