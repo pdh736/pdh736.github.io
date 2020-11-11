@@ -59,3 +59,6 @@ ex) netstat -antp | grep ~~~
 | CLOSING     | 보낸 데이터가 분실된 상태입니다.                             |
 | UNKNOWN     | 소켓상태를 확인할 수 없는 상태입니다.                        |
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE2ODEwMTE5NzVdfQ==
+-->
