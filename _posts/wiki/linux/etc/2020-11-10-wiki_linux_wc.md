@@ -16,8 +16,6 @@ last_modified_at: 2020-11-10
 ---
 
 ## wc
-
-### NAME 
 wc - (word count) 사용자가 지정한 파일의 행, 단어, 문자수를 세는 프로그램
 
 ### SYNOPSIS
