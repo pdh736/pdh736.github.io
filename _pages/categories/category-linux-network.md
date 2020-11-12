@@ -1,5 +1,5 @@
 ---
-title: "linux"
+title: "linux network"
 layout: archive
 permalink: categories/linux_network
 author_profile: true

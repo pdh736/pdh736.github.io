@@ -1,5 +1,5 @@
 ---
-title: "linux"
+title: "linux shell script"
 layout: archive
 permalink: categories/shell_script
 author_profile: true
