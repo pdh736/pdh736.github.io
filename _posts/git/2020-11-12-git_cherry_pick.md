@@ -6,6 +6,7 @@ categories:
   - git
 tags:
   - git
+  - cherry-pick
 
 toc: true
 toc_sticky: true
