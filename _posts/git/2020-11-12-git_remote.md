@@ -6,6 +6,7 @@ categories:
   - git
 tags:
   - git
+  - remote
 
 toc: true
 toc_sticky: true
