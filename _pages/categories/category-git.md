@@ -1,5 +1,5 @@
 ---
-title: "Wiki git"
+title: "git"
 layout: archive
 permalink: categories/git
 author_profile: true

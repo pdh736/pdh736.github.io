@@ -1,7 +1,7 @@
 ---
-title: "Wiki linux"
+title: "linux"
 layout: archive
-permalink: categories/linux
+permalink: categories/shell_script
 author_profile: true
 sidebar_main: true
 ---
@@ -10,5 +10,5 @@ sidebar_main: true
 
 ***
 
-{% assign posts = site.categories.linux %}
+{% assign posts = site.categories.shell_script %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 title                    : "Park's Archive"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Daehee.Park"
+name                     : "Park.D"
 description              : "Archive."
 url                      : "https://pdh736.github.io"
 baseurl                  : ""
