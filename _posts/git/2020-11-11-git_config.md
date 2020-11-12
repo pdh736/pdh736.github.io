@@ -6,6 +6,8 @@ categories:
   - git
 tags:
   - git
+  - config
+  - setting
 
 toc: true
 toc_sticky: true
