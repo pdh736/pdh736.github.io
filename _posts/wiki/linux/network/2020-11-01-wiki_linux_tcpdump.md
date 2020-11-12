@@ -3,10 +3,11 @@ title: "tcpdump"
 excerpt: "How to use tcpdump"
 
 categories:
-  - linux
+  - linux_network
 tags:
-  - wiki
   - linux
+  - network
+  - tcpdump
 
 toc: true
 toc_sticky: true
@@ -21,5 +22,6 @@ tcpdump -i [캡쳐할네트워크] host [IP] -w [filename]
 
 ex) tcpdump -i eth1 host 192.168.40.201 -w test.pcap
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mjc3NjQyMjVdfQ==
+eyJoaXN0b3J5IjpbLTExNjgzODQxNDAsLTE3Mjc3NjQyMjVdfQ
+==
 -->
