@@ -3,10 +3,11 @@ title: "netstat"
 excerpt: "How to use netstat"
 
 categories:
-  - linux
+  - linux_network
 tags:
-  - wiki
   - linux
+  - network
+  - netstat
 
 toc: true
 toc_sticky: true
@@ -60,5 +61,6 @@ ex) netstat -antp | grep ~~~
 | UNKNOWN     | 소켓상태를 확인할 수 없는 상태입니다.                        |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODEwMTE5NzVdfQ==
+eyJoaXN0b3J5IjpbLTIxMDIwNzQ5MjYsLTE2ODEwMTE5NzVdfQ
+==
 -->
