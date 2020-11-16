@@ -1,15 +1,5 @@
 # main links
 main:
-  #- title: "Quick-Start Guide"
-  #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
   - title: "Categories"
     url: /categories/
   
@@ -27,3 +17,18 @@ main:
 # sidebar_main: true
 # 없으면 삽입
 # 2. pages/catecory 에 연결할 카테고리 페이지를 추가한다.
+#
+#
+# =============================
+# 아래도 가능하지만 총 글 몇개인지는 들어가야 볼 수 있으
+# sidebar-contents:
+#  - title: Front-End
+#    children:
+#      - title: "HTML & CSS 이야기"
+#        url: /categories/web
+#      - title: "Javascript 이야기"
+#        url: /categories/javascript
+#      - title: "Typescript 이야기"
+#        url: /categories/typescript
+#      - title: "React 이야기"
+#        url: /categories/react
