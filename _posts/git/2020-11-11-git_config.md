@@ -75,3 +75,26 @@ $ git config --local --get-regexp alias
 //전역 및 지역 Alias 조회
 $ git config --get-regexp alias	
 ```
+
+$HOME/.gitconfig
+```
+[user]
+    email = xxxx@xxxx.com
+    name = Daehee.Park
+[core]
+    editor = vim 
+    autocrlf = input
+    autiocrlf = input
+    whitespace = " trailing-space,space-before-tab,cr-at-eol"
+[push]
+    default = matching
+[alias]
+    hide = update-index --assume-unchanged
+    unhide = update-index --no-assume-unchanged
+    d = difftool
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+```
+
