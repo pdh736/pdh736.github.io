@@ -76,6 +76,7 @@ $ git config --local --get-regexp alias
 $ git config --get-regexp alias	
 ```
 
+## .gitconfig 파일 내용
 $HOME/.gitconfig
 ```
 [user]
