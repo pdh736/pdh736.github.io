@@ -27,7 +27,9 @@ yumdownloader 사용
 --destdir 저장되는 디렉토리 지정
 
 ### 사용
+```
 yumdownloader --resolve [package name]
+```
 
 ## ubuntu
 ```
