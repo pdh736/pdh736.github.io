@@ -92,7 +92,6 @@ autoreconf -fiv
 make &amp;&amp; \ make install
 </code></pre>
 <h3 id="libmp3lame-mp3-audio-encoder">libmp3lame (MP3 audio encoder)</h3>
-<p>ubuntu</p>
 <pre><code>wget -O lame-3.100.tar.gz https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz &amp;&amp; \ tar xzvf lame-3.100.tar.gz
 cd lame-3.100
 PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" --disable-shared --enable-nasm
