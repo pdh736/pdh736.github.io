@@ -8,7 +8,7 @@
 excerpt: “How to build ffmpeg”</p>
 <p>categories:</p>
 <ul>
-<li>study_ffmpeg<br>
+<li>ffmpeg<br>
 tags:</li>
 <li>ffmpeg</li>
 <li>ffmpeg_build</li>
