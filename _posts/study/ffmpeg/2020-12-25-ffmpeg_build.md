@@ -15,8 +15,9 @@ tags:</li>
 </ul>
 <p>toc: true<br>
 toc_sticky: true</p>
-<h2 id="date-2020-12-12last_modified_at-2020-12-25">date: 2020-12-12<br>
-last_modified_at: 2020-12-25</h2>
+<p>date: 2020-12-12<br>
+last_modified_at: 2020-12-25</p>
+<hr>
 <h1 id="ffmpeg-build">ffmpeg build</h1>
 <p>출처<br>
 <a href="https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu">https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu</a><br>
