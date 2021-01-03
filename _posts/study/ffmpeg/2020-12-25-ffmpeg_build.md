@@ -71,8 +71,11 @@ sudo apt-get update -qq && sudo apt-get -y install \
 cd ~/ffmpeg_sources && \ wget https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.bz2
 tar xjvf nasm-2.14.02.tar.bz2
 cd nasm-2.14.02
+
 ./autogen.sh
-PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --bindir="FFMPEG_BIN"
+
+PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN"
+
 make && \ make install
 ```
 
@@ -81,8 +84,14 @@ make && \ make install
 ```
 git -C x264 pull 2> /dev/null || git clone --depth 1 https://code.videolan.org/videolan/x264.git
 cd x264
-PATH=$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN" --enable-static --enable-pic
-PATH="$HOME/bin:$PATH" make && make install
+
+PATH="$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN" --enable-shared --enable-pic
+
+PATH="$FFMPEG_BIN:$PATH" make && make install
+```
+```
+static build
+PATH="$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN" --enable-static --enable-pic
 ```
 
 ### libx265 (h.265 encoder)
@@ -91,15 +100,24 @@ PATH="$HOME/bin:$PATH" make && make install
 sudo apt-get install libnuma-dev
 git -C x265_git pull 2> /dev/null || git clone https://bitbucket.org/multicoreware/x265_git
 cd x265_git/build/linux
-PATH="$HOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED=off ../../source
-PATH="$HOME/bin:$PATH" make && \ make install
+
+PATH="$FFMPEG_BIN:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMPEG_BUILD" -DENABLE_SHARED=on ../../source
+
+PATH="$FFMPEG_BIN:$PATH" make && \ make install
+```
+```
+static build
+PATH="$FFMPEG_BIN:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMPEG_BUILD" -DENABLE_SHARED=off ../../source
 ```
 
 ### libvpc (VP8/VP9 video encoder/decode)
 
 ```
 git -C libvpx pull 2> /dev/null || git clone --depth 1 https://chromium.googlesource.com/webm/libvpx.git
-cd libvpx && \ PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
+cd libvpx
+
+PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --enable-shared --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
+
 PATH="$FFMPEG_BIN:$PATH" make && \ make install
 ```
 
@@ -110,8 +128,13 @@ PATH="$FFMPEG_BIN:$PATH" make && \ make install
 git -C fdk-aac pull 2> /dev/null || git clone --depth 1 https://github.com/mstorsjo/fdk-aac
 cd fdk-aac
 autoreconf -fiv
-./configure --prefix="$HOME/ffmpeg_build" --disable-shared
+./configure --prefix="$FFMPEG_BUILD"
+
 make && \ make install
+```
+```
+static build
+./configure --prefix="$FFMPEG_BUILD" --disable-shared
 ```
 
 ### libmp3lame (MP3 audio encoder)
@@ -119,8 +142,13 @@ make && \ make install
 ```
 wget -O lame-3.100.tar.gz https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz && \ tar xzvf lame-3.100.tar.gz
 cd lame-3.100
-PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" --disable-shared --enable-nasm
-PATH="$HOME/bin:$PATH" make && \ make install
+PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN" --enable-shared --enable-nasm
+
+PATH="$FFMPEG_BIN:$PATH" make && \ make install
+```
+```
+static build
+PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN" --disable-shared --enable-nasm
 ```
 
 
@@ -129,8 +157,13 @@ PATH="$HOME/bin:$PATH" make && \ make install
 git -C opus pull 2> /dev/null || git clone --depth 1 https://github.com/xiph/opus.git
 cd opus
 ./autogen.sh
-./configure --prefix="$FFMPEG_BUILD" --disable-shared
+./configure --prefix="$FFMPEG_BUILD" --enable-shared
+
 make && \ make install
+```
+```
+static build
+./configure --prefix="$FFMPEG_BUILD" --disable-shared
 ```
 
 ### libsvtav1 (AV1 video encoder/decoder)
@@ -141,8 +174,13 @@ Requires  ffmpeg  to be configured with  --enable-libsvtav1.
 git -C SVT-AV1 pull 2> /dev/null || git clone https://github.com/AOMediaCodec/SVT-AV1.git
 mkdir -p SVT-AV1/build
 cd SVT-AV1/build
-PATH="$HOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEC=OFF -DBUILD_SHARED_LIBS=OFF ..
-PATH="$HOME/bin:$PATH" make && make install
+PATH="$FFMPEG_BIN:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMPEG_BUILD" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEC=OFF -DBUILD_SHARED_LIBS=ON ..
+
+PATH="$FFMPEG_BIN:$PATH" make && make install
+```
+```
+static build
+PATH="$FFMPEG_BIN:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMPEG_BUILD" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEC=OFF -DBUILD_SHARED_LIBS=OFF ..
 ```
 
 ### ffmpeg
@@ -154,14 +192,13 @@ wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.
 tar xjvf ffmpeg-snapshot.tar.bz2 && cd ffmpeg 
 PATH="$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configure \
   --prefix="$FFMPEG_BUILD" \
-  --pkg-config-flags="--static" \
   --extra-cflags="-I$FFMPEG_BUILD/include" \
   --extra-ldflags="-L$FFMPEG_BUILD/lib" \
   --extra-libs="-lpthread -lm" \
   --bindir="$FFMPEG_BIN" \
+  --enable-shared \
   --enable-gpl \
   --enable-gnutls \
-  --enable-libaom \
   --enable-libass \
   --enable-libfdk-aac \
   --enable-libfreetype \
@@ -173,6 +210,7 @@ PATH="$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configu
   --enable-libx264 \
   --enable-libx265 \
   --enable-nonfree
+  
   PATH="$FFMPEG_BIN:$PATH" make && make install
   hash -r
 ```
