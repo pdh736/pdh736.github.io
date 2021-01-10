@@ -4,9 +4,11 @@ excerpt: "difference between shell and terminal"
 
 categories:
   - linux
+
 tags:
-  - wiki
   - linux
+  - shell
+  - terminal
 
 toc: true
 toc_sticky: true
