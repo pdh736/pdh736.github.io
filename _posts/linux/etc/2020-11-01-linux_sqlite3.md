@@ -4,6 +4,7 @@ excerpt: "How to use sqlite"
 
 categories:
   - linux_etc
+
 tags:
   - linux
   - sqlite3
