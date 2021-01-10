@@ -4,6 +4,7 @@ excerpt: "Linux Directory Structure"
 
 categories:
   - linux_etc
+
 tags:
   - linux
   - directory_structure
