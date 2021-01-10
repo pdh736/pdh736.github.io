@@ -4,6 +4,7 @@ excerpt: "How to use tmux"
 
 categories:
   - linux_etc
+
 tags:
   - linux
   - tmux
@@ -70,8 +71,9 @@ ctrl + b, $
 # 세션 종료
 $ (tmux에서) exit
 
-# 세션 중단하기 (detached)
-ctrl + b, d
+# 세션 분리하기 (detached)
+ctrl + b, d  
+세션 분리시 실행중인 프로세스들 종료 되지 않고 계속 돌아감
 
 # 세션 목록 보기 (list-session)
 $ tmux ls
@@ -170,4 +172,8 @@ set -g status-justify centre
 unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
 unbind Down
 bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+
+# 패널 동시입력
+bind-key y set-window-option synchronize-panes
+
 ```
