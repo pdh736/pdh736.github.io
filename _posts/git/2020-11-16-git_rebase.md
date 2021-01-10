@@ -4,8 +4,8 @@ excerpt: "How to set git rebase"
 
 categories:
   - git
+
 tags:
-  - git
   - rebase
 
 toc: true
