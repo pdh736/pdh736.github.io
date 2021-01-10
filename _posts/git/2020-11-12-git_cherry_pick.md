@@ -5,7 +5,6 @@ excerpt: "How to set git cherry-pick"
 categories:
   - git
 tags:
-  - git
   - cherry-pick
 
 toc: true
