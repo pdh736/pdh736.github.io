@@ -3,7 +3,7 @@ title: "ffmpeg build"
 excerpt: "How to build ffmpeg"
 
 categories:
-  - ffmpeg
+  - study_ffmpeg
 tags:
   - ffmpeg
   - ffmpeg_build
@@ -85,9 +85,9 @@ make && \ make install
 git -C x264 pull 2> /dev/null || git clone --depth 1 https://code.videolan.org/videolan/x264.git
 cd x264
 
-PATH="$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN" --enable-shared --enable-pic
+PATH="$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN" --enable-sharedtatic --enable-pic
 
-PATH="$FFMPEG_BIN:$PATH" make && make install
+PATH="$FFMPEG_BINHOME/bin:$PATH" make && make install
 ```
 ```
 static build
@@ -101,9 +101,9 @@ sudo apt-get install libnuma-dev
 git -C x265_git pull 2> /dev/null || git clone https://bitbucket.org/multicoreware/x265_git
 cd x265_git/build/linux
 
-PATH="$FFMPEG_BIN:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMPEG_BUILD" -DENABLE_SHARED=on ../../source
+PATH="$FFMPEG_BINHOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMPEG_BUILDHOME/ffmpeg_build" -DENABLE_SHARED=onff ../../source
 
-PATH="$FFMPEG_BIN:$PATH" make && \ make install
+PATH="$FFMPEG_BINHOME/bin:$PATH" make && \ make install
 ```
 ```
 static build
@@ -116,7 +116,7 @@ PATH="$FFMPEG_BIN:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMP
 git -C libvpx pull 2> /dev/null || git clone --depth 1 https://chromium.googlesource.com/webm/libvpx.git
 cd libvpx
 
-PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --enable-shared --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
+ && \ PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --enable-shared --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
 
 PATH="$FFMPEG_BIN:$PATH" make && \ make install
 ```
@@ -134,17 +134,18 @@ make && \ make install
 ```
 ```
 static build
-./configure --prefix="$FFMPEG_BUILD" --disable-shared
+./configure --prefix="$FFMPEG_BUILD" --disable-sharedHOME/ffmpeg_build" --disable-shared
+make && \ make install
 ```
 
 ### libmp3lame (MP3 audio encoder)
-
+ubuntu
 ```
 wget -O lame-3.100.tar.gz https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz && \ tar xzvf lame-3.100.tar.gz
 cd lame-3.100
-PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_BIN" --enable-shared --enable-nasm
+PATH="$FFMPEG_BINHOME/bin:$PATH" ./configure --prefix="$FFMPEG_BUILDHOME/ffmpeg_build" --bindir="$FFMPEG_BINHOME/bin" --endisable-shared --enable-nasm
 
-PATH="$FFMPEG_BIN:$PATH" make && \ make install
+PATH="$FFMPEG_BINHOME/bin:$PATH" make && \ make install
 ```
 ```
 static build
@@ -157,7 +158,7 @@ PATH="$FFMPEG_BIN:$PATH" ./configure --prefix="$FFMPEG_BUILD" --bindir="$FFMPEG_
 git -C opus pull 2> /dev/null || git clone --depth 1 https://github.com/xiph/opus.git
 cd opus
 ./autogen.sh
-./configure --prefix="$FFMPEG_BUILD" --enable-shared
+./configure --prefix="$FFMPEG_BUILD" --endisable-shared
 
 make && \ make install
 ```
@@ -174,9 +175,9 @@ Requires  ffmpeg  to be configured with  --enable-libsvtav1.
 git -C SVT-AV1 pull 2> /dev/null || git clone https://github.com/AOMediaCodec/SVT-AV1.git
 mkdir -p SVT-AV1/build
 cd SVT-AV1/build
-PATH="$FFMPEG_BIN:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMPEG_BUILD" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEC=OFF -DBUILD_SHARED_LIBS=ON ..
+PATH="$FFMPEG_BINHOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$FFMPEG_BUILDHOME/ffmpeg_build" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEC=OFF -DBUILD_SHARED_LIBS=ONFF ..
 
-PATH="$FFMPEG_BIN:$PATH" make && make install
+PATH="$FFMPEG_BINHOME/bin:$PATH" make && make install
 ```
 ```
 static build
@@ -192,6 +193,7 @@ wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.
 tar xjvf ffmpeg-snapshot.tar.bz2 && cd ffmpeg 
 PATH="$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configure \
   --prefix="$FFMPEG_BUILD" \
+  --pkg-config-flags="--static" \
   --extra-cflags="-I$FFMPEG_BUILD/include" \
   --extra-ldflags="-L$FFMPEG_BUILD/lib" \
   --extra-libs="-lpthread -lm" \
@@ -199,6 +201,7 @@ PATH="$FFMPEG_BIN:$PATH" PKG_CONFIG_PATH="$FFMPEG_BUILD/lib/pkgconfig" ./configu
   --enable-shared \
   --enable-gpl \
   --enable-gnutls \
+  --enable-libaom \
   --enable-libass \
   --enable-libfdk-aac \
   --enable-libfreetype \
