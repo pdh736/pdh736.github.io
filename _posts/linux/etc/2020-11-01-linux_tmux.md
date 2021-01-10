@@ -16,24 +16,24 @@ date: 2020-11-03
 last_modified_at: 2020-11-03
 ---
 
-## tmux
+# tmux
 Terminal Muliiplexer
 -   tmux 세션을 시작한 후 다음 세션에서 여러 개의 창을 열 수 있음
 -   하나의 터미널에서 여러 프로그램을 쉽게 전환하고 분리하여 다른 터미널에 다시 연결할 수 있음
 -   tmux 세션은 영구적이여서, tmux에서 실행되는 프로그램은 연결이 끊어져도 계속 실행됨
 
-### 구성
+## 구성
 -   session : tmux 실행 단위. 여러개의 window로 구성.
 -   window : 터미널 화면. 세션 내에서 탭처럼 사용할 수 있음.
 -   pane(패널) : 하나의 window 내에서 화면 분할.
 -   status bar : 화면 아래 표시되는 상태 막대.
 
 
-### 설치
+## 설치
 `yum install tmux`
 
 
-### 명령어 정리
+## 명령어 정리
 tmux는 prefix 키인  `ctrl+b`를 누른 후 다음 명령 키를 눌러야 동작할 수 있다. 
 ```text
 ctrl + b, <key>
@@ -57,7 +57,7 @@ bind-key [-cnr] [-t key-table] key command [arguments]
 unbind-key [-acn] [t key-table] key
 ```
 
-#### 세션 관련
+### 세션 관련
 ```text
 # 새 세션 생성
 $ tmux new -s <session-name>
@@ -86,7 +86,7 @@ $ tmux attach -t <session-number or session-name>
 $ tmux kill-session -t <session-name>
 ```
 
-#### 윈도우 관련
+### 윈도우 관련
 ```text
 # 새 윈도우 생성
 ctrl + b, c
@@ -109,7 +109,7 @@ ctrl + b, 0-9 : window number
             f : find by name
 ```
 
-#### pane 관련
+### pane 관련
 ```text
 # 패널 나누기
 ctrl + b, % : 세로 분할
@@ -139,7 +139,7 @@ resize-pane -L 10
 ctrl + b, spacebar : 모두 세로 분할, 모두 가로 분할 등등 순서대로 바뀜
 ```
 
-#### copy mode
+### copy mode
 ```text
 # copy mode 진입
 ctrl + b, [
@@ -148,7 +148,7 @@ ctrl + b, [
 (copy mode에서) q or ESC
 ```
 
-### config
+## config
 default 설정파일이 생성되지는 않지만
 ~/.tmux.conf 생성시 설정 적용됨
 ```
@@ -175,5 +175,4 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 
 # 패널 동시입력
 bind-key y set-window-option synchronize-panes
-
 ```
