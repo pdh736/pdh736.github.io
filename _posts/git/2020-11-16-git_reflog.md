@@ -4,8 +4,8 @@ excerpt: "How to use git reflog"
 
 categories:
   - git
+
 tags:
-  - git
   - reflog
 
 toc: true
