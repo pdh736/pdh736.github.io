@@ -4,6 +4,7 @@ excerpt: "How to set git config"
 
 categories:
   - git
+
 tags:
   - config
   - setting
