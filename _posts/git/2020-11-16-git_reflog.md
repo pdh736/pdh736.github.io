@@ -30,3 +30,16 @@ last_modified_at: 2020-11-16
 #git checkout -b [브랜치 이름] [커밋 해시]
 ```
 
+## 커밋 되돌리기
+```
+git reflog
+
+git reset --hard [커밋 해시]
+```
+
+## 브랜치 되돌리기
+```
+git reflog or git reflog | grep 브랜치이름
+
+git checkout -b [브랜치 이름] [커밋 해시]
+```
