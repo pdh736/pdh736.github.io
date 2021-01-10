@@ -4,8 +4,8 @@ excerpt: "How to set git remote"
 
 categories:
   - git
+
 tags:
-  - git
   - remote
 
 toc: true
