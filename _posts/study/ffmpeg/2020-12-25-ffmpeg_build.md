@@ -3,9 +3,8 @@ title: "ffmpeg build"
 excerpt: "How to build ffmpeg"
 
 categories:
-  - study_ffmpeg
-tags:
   - ffmpeg
+tags:
   - ffmpeg_build
 
 toc: true
