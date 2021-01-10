@@ -6,7 +6,7 @@ categories:
   - git
 tags:
   - git
-  - reset
+  - rebase
 
 toc: true
 toc_sticky: true
