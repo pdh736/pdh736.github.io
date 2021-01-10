@@ -6,7 +6,6 @@ categories:
   - git
 tags:
   - git
-  - log
   - reflog
 
 toc: true
