@@ -1,5 +1,5 @@
 ---
-title: "Directory Structure"
+title: "Linux Directory Structure"
 excerpt: "Linux Directory Structure"
 
 categories:
@@ -15,7 +15,7 @@ toc_sticky: true
 date: 2020-11-10
 last_modified_at: 2020-11-10
 ---
-## 디렉토리 구조
+# 리눅스 디렉토리 구조
 
 / : 최상위 디렉터리(root)  
 /bin : Binary의 약자로서 명령어가 들어있는 디렉터리라고 이해  
