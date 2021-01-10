@@ -6,6 +6,7 @@ categories:
   - study_grpc
 tags:
   - grpc
+  - grpc_build
 
 toc: true
 toc_sticky: true
