@@ -1,6 +1,6 @@
 ---
 title: "cron"
-excerpt: "how to use cron"
+excerpt: "how to use wcron"
 
 categories:
   - linux_etc
@@ -14,8 +14,9 @@ toc_sticky: true
 date: 2020-11-11
 last_modified_at: 2020-11-11
 ---
+# cron
 
-### 개요
+## 개요
 
 - cron, cronie, crond, cron daemon, crontab, cron job, crontab job
 - 크론, 크론 데몬, 크론탭, 크론작업, 리눅스 작업 스케줄러
@@ -29,7 +30,7 @@ last_modified_at: 2020-11-11
 - 로그: [/var/log/cron](https://zetawiki.com/wiki//var/log/cron)에 변경/수행 이력이 기록됨
 - 런레벨, 사용자 권한 등 환경에 따라 GUI 프로그램을 실행시키거나 X윈도우에서 별도의 창을 띄우는 작업은 불가능할 수 있음
 
-### 등록형식
+## 등록형식
 
 ```
 * * * * *  수행할 명령어
@@ -45,7 +46,7 @@ last_modified_at: 2020-11-11
 분,시,일,월,요일
 
 
-### 예시
+## 예시
 
 ```
 * * * * * /root/every_1min.sh
@@ -89,7 +90,7 @@ last_modified_at: 2020-11-11
 
 
 
-### 작업목록 확인
+## 작업목록 확인
 
 **현재 사용자**
 ```
@@ -104,7 +105,7 @@ no crontab for testuser
 ```
 
 
-### 수동 등록 
+## 수동 등록 
 
 ```
 crontab -e
@@ -113,11 +114,11 @@ vi 편집기나 Nano 에디터로 현재 사용자에 대한 cron작업의 확�
 
 
 
-### 등록 스크립트
+## 등록 스크립트
 
 
 
-### 삭제
+## 삭제
 
 현재 사용자의 예약작업을 모두 삭제
 ```
@@ -134,3 +135,4 @@ crontab -r
 [root@zetawiki ~]# crontab -l
 no crontab for root
 ```
+
