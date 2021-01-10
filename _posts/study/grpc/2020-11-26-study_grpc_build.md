@@ -3,9 +3,8 @@ title: "grpc build"
 excerpt: "How to build grpc"
 
 categories:
-  - study_grpc
-tags:
   - grpc
+tags:
   - grpc_build
 
 toc: true
