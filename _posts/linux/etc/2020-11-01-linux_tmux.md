@@ -8,6 +8,7 @@ categories:
 tags:
   - linux
   - tmux
+  - xclip
 
 toc: true
 toc_sticky: true
@@ -236,8 +237,9 @@ bind -t vi-copy 'y' copy-selection
 bind C-c run "tmux save-buffer - | xclip -i -sel clipboard"
 bind C-v run "tmux set-buffer \"$(xclip -o -sel clipboard)\"; tmux paste-buffer
 or
-bind -t vi-copy y copy-pipe "xclip -sel clip -i" 
+bind -t vi-copy y copy-pipe "xclip -i -sel clip" 
 사용
+-sel or -selection clipboard 없이하면 default x selection인 primary selection으로 복사됨(ctrl+ins, shift ins 공간) 
 ```
 
 
