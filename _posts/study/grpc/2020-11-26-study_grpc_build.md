@@ -105,9 +105,11 @@ set(CMAKE_C_COMPILER /opt/hisi-linux/x86-arm/arm-hisiv600-linux/bin/arm-hisiv600
 set(CMAKE_CXX_COMPILER /opt/hisi-linux/x86-arm/arm-hisiv600-linux/bin/arm-hisiv600-linux-gnueabi-g++)
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
-set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)e
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 ```
+
+sub module package 경로 지정해서 할경우 아래 4줄은 사용하지 말것
 ```
 ex
 SET(CMAKE_SYSTEM_NAME Linux)
@@ -119,10 +121,6 @@ set(CMAKE_CXX_COMPILER ${tool_root}/arm-hisiv600-linux/target/bin/arm-hisiv600-l
 # should make sym link libstdc++ at cross compiler dir
 link_directories(${tool_root}/arm-hisiv600-linux/target/lib)
 link_libraries(stdc++)
-set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
-set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
-set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
-set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 ```
 grpc/cmake 아래 빌드할 디렉토리 만든뒤 
 그 디렉토리에서 실행
@@ -143,7 +141,20 @@ $ make
 ```
 (공유라이브러리로 빌드 했을경우 LD_LIBRARY_PATH 지정할것)
 
-
-
-
+## etc
+참고
+grpc static library build 하여 나온 것들 shared library 1개로 묶어서 사용
+```
+arm-hisiv600-linux-g++ -shared -o libtest_grpc.so -Wl,--whole-archive \
+    libabsl_bad_optional_access.a libabsl_int128.a libabsl_throw_delegate.a libabsl_bad_variant_access.a\
+    libabsl_log_severity.a libabsl_time.a libabsl_base.a libabsl_malloc_internal.a libabsl_time_zone.a\
+    libabsl_city.a libabsl_raw_hash_set.a libaddress_sorting.a libabsl_civil_time.a libabsl_raw_logging_internal.a\
+    libabsl_cord.a libabsl_spinlock_wait.a libabsl_debugging_internal.a libabsl_stacktrace.a libgpr.a\
+    libabsl_demangle_internal.a libabsl_status.a libabsl_dynamic_annotations.a libabsl_str_format_internal.a\
+    libre2.a libabsl_exponential_biased.a libabsl_strings.a libupb.a libabsl_graphcycles_internal.a \
+    libabsl_strings_internal.a libabsl_hash.a libabsl_symbolize.a libabsl_hashtablez_sampler.a libabsl_synchronization.a \
+    libprotobuf.a libprotoc.a libgrpc++.a libgrpc.a libz.a libcares.a\
+    -Wl,--no-whole-archive
+```
+공유라이브러리들을 묶는것은 힘들지만 아카이브는 쉽게 묶을수 있음
 
